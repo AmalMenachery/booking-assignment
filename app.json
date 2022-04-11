@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "booking-task",
+    "slug": "booking-task",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

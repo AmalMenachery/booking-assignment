@@ -1,0 +1,6 @@
+module Pods_bookingtask {
+  umbrella header "Pods-bookingtask-umbrella.h"
+
+  export *
+  module * { export * }
+}
