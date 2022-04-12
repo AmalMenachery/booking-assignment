@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { ImageBackground, View, Text, Image } from "react-native";
 import styles from "./home.styles";
-import HomeBg from "../../assets/images/home-backdrop.png";
-import Logo from "../../assets/images/logo.png";
-import Partners from "../../assets/images/partners.png";
+import HomeBg from "src/assets/images/home-backdrop.png";
+import Logo from "src/assets/svg/logo.svg";
+import Partners from "src/assets/images/partners.png";
 import GuestSearchBox from "../../components/organisms/guestSearchBox";
 import { GuestDetail } from "../../types/guestDetail";
 
@@ -20,7 +20,7 @@ const Home = () => {
       <ImageBackground source={HomeBg} style={styles.imgBackDrop}>
         <View style={styles.container}>
           <View style={styles.logo}>
-            <Image source={Logo} />
+             <Logo width={'200'} height={'200'}/>
           </View>
           <View style={styles.title}>
             <Text style={styles.headerText}>

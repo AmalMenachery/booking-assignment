@@ -4,8 +4,8 @@ import { TextInput } from "react-native-paper";
 
 import styles from "./searchBar.styles";
 
-import Arrow from "../../../assets/images/arrow.png";
-import Pin from "../../../assets/images/pin.png";
+import Arrow from "src/assets/svg/arrow.svg";
+import Pin from "src/assets/images/pin.png";
 
 export type SearchBarProps = {
   inputFieldStyle?: Object;

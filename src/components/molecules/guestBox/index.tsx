@@ -4,7 +4,7 @@ import { Button } from "react-native-paper";
 
 import styles from "./guestBox.styles";
 
-import Guests from "../../../assets/images/guests.png";
+import Guests from "src/assets/svg/guests.svg";
 import { View, Text } from "react-native";
 import GuestPicker from "../../organisms/guestPicker";
 import { GuestDetail } from "../../../types/guestDetail";

@@ -9,7 +9,7 @@ interface RoomCardProps {
   room?: GuestDetail;
   updateRoom: Function;
   id: string;
-  index:number;
+  index: number;
 }
 
 const RoomCard: React.FC<RoomCardProps> = ({ room, id, updateRoom, index }) => {
@@ -56,7 +56,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, id, updateRoom, index }) => {
   return (
     <View style={styles.container}>
       <View style={styles.title}>
-        <Text style={styles.titleText}>Room #{index+1}</Text>
+        <Text style={styles.titleText}>Room #{index + 1}</Text>
         {removeCard}
       </View>
       <GuestCounter

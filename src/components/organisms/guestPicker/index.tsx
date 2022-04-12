@@ -1,9 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import {
-  View,
-  Modal,
-  ScrollView,
-} from "react-native";
+import { View, Modal, ScrollView } from "react-native";
 import Button from "../../atoms/button";
 import Header from "../../atoms/header";
 import RoomCard from "../roomCard";
@@ -15,7 +11,7 @@ type GuestPickerProps = {
   guestDetails?: GuestDetail[];
   visible?: boolean;
   onClose: Function;
-  updateDetails:Function;
+  updateDetails: Function;
 };
 
 const GuestPicker: React.FC<GuestPickerProps> = ({
@@ -25,7 +21,7 @@ const GuestPicker: React.FC<GuestPickerProps> = ({
   updateDetails,
 }) => {
   const [guestPickerDetails, setDetails] = useState<GuestDetail>();
-  const [guestCounter,setCounter] = useState(2);
+  const [guestCounter, setCounter] = useState(2);
   const SearchButtonLabel = useMemo(() => {
     let guestCount = 0;
     guestPickerDetails?.forEach((room) => {
@@ -45,7 +41,7 @@ const GuestPicker: React.FC<GuestPickerProps> = ({
     } else {
       setDetails((prev) => [
         ...prev,
-        { id: guestPickerDetails?.length, adults: 2, children: 0 },
+        { id: Math.floor(Math.random() * 10000), adults: 2, children: 0 },
       ]);
     }
   };
@@ -58,20 +54,20 @@ const GuestPicker: React.FC<GuestPickerProps> = ({
       });
     } else {
       setDetails((prev) => {
-        return prev?.map((room)=>{
-          if(room?.id === roomId){
-            return {...newRoomDetails};
+        return prev?.map((room) => {
+          if (room?.id === roomId) {
+            return { ...newRoomDetails };
           }
-          return Item;
-        })
+          return room;
+        });
       });
     }
   };
 
-  const closeModal = ()=>{
-    updateDetails(guestCounter,guestPickerDetails);
+  const closeModal = () => {
+    updateDetails(guestCounter, guestPickerDetails);
     onClose();
-  }
+  };
 
   const addRoomButton = useMemo(() => {
     if (guestPickerDetails?.length < 8) {
@@ -96,7 +92,7 @@ const GuestPicker: React.FC<GuestPickerProps> = ({
       <View style={styles.container}>
         <ScrollView showsHorizontalScrollIndicator={false}>
           {guestPickerDetails &&
-            guestPickerDetails?.map((room,index) => (
+            guestPickerDetails?.map((room, index) => (
               <RoomCard
                 id={room?.id}
                 index={index}
