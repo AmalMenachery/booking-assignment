@@ -31,7 +31,7 @@ const RoomCard: React.FC<RoomCardProps> = ({ room, id, updateRoom, index }) => {
     updateRoom(id, {
       ...room,
       children: val,
-      childrenAges: [...(room?.childrenAges || []), { id: val, age: 0 }],
+      childrenAges: [...(room?.childrenAges || []), { id: Math.floor(Math.random() * 10000), age: 0 }],
     });
   }, 1000);
 

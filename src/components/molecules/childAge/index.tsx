@@ -30,7 +30,6 @@ const ChildAge: React.FC<ChildAgeProps> = ({ age = 1, setAge = () => {} }) => {
           rowTextStyle={styles.dropdown4RowTxtStyle}
           onSelect={(selectedItem, index) => {
             setAge(selectedItem, index);
-            console.log(selectedItem, index);
           }}
           buttonTextAfterSelection={(selectedItem, index) => {
             return selectedItem;
